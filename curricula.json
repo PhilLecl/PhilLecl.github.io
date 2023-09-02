@@ -126,14 +126,14 @@
     ]
   },
   {
-    "id": "foo.bar.0815",
-    "name": "Test Platzhalter",
+    "id": "foo",
+    "name": "Platzhalter Studiengang",
     "max_drop": 0,
     "max_drop_cp": 0,
     "modules": [
       {
-        "id": "foo",
-        "name": "Modul Platzhalter",
+        "id": "bar",
+        "name": "Platzhalter Modul",
         "cp": 20,
         "weight": 1.0,
         "droppable": false
