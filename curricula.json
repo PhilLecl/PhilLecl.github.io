@@ -126,17 +126,171 @@
     ]
   },
   {
-    "id": "foo",
-    "name": "Platzhalter Studiengang",
-    "max_drop": 0,
-    "max_drop_cp": 0,
+    "id": "bsc.",
+    "name": "B.Sc. Chemie (PO 2021)",
+    "max_drop": 3,
+    "max_drop_cp": 20,
     "modules": [
       {
-        "id": "bar",
-        "name": "Platzhalter Modul",
-        "cp": 20,
+        "id": "alg-ac",
+        "name": "ALG-AC",
+        "cp": 17,
         "weight": 1.0,
-        "droppable": false
+        "droppable": true
+      },
+      {
+        "id": "alg-oc",
+        "name": "ALG-OC",
+        "cp": 10,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "alg-pc1",
+        "name": "ALG-PC1",
+        "cp": 7,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "alg-pc2",
+        "name": "ALG-PC2",
+        "cp": 4,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "mmc1",
+        "name": "MMC1",
+        "cp": 4,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "mmc2",
+        "name": "MMC2",
+        "cp": 4,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "phys",
+        "name": "Physik",
+        "cp": 15,
+        "weight": 1.0,
+        "droppable": true
+      },
+      {
+        "id": "aca1",
+        "name": "ACA1",
+        "cp": 4,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "aca2",
+        "name": "ACA2",
+        "cp": 10,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "acf",
+        "name": "ACF",
+        "cp": 7,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "cchem",
+        "name": "CompChem",
+        "cp": 4,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "MCA",
+        "name": "MCA",
+        "cp": 6,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "MM",
+        "name": "Moderne Methoden",
+        "cp": 5,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "mmc3",
+        "name": "MMC3",
+        "cp": 4,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "oca",
+        "name": "OCA",
+        "cp": 6,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "ocf",
+        "name": "OCF",
+        "cp": 13,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "pca",
+        "name": "PCA",
+        "cp": 12,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "pcf",
+        "name": "PCF",
+        "cp": 7,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "spek",
+        "name": "Spektroskopie",
+        "cp": 4,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "stat",
+        "name": "Stat. Thermodynamik",
+        "cp": 3,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "tca",
+        "name": "TCA",
+        "cp": 7,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "tmcf",
+        "name": "TMCF",
+        "cp": 6,
+        "weight": 1.3,
+        "droppable": true
+      },
+      {
+        "id": "ba",
+        "name": "Bachelorarbeit",
+        "cp": 14,
+        "weight": 2.0,
+        "droppable": true
       }
     ]
   }
