@@ -290,7 +290,7 @@
         "name": "Bachelorarbeit",
         "cp": 14,
         "weight": 2.0,
-        "droppable": true
+        "droppable": false
       }
     ]
   }
