@@ -50,6 +50,7 @@ function calculateGrades() {
     for (drop of dropCombinations) {
         dropGrades.push([drop, calculateDropGrade(curriculum, drop)])
     }
+    dropGrades = dropGrades.filter((dg) => dg[1] <= dropGrades[0][1])
     dropGrades.sort((a, b) => a[0].length === 0? 0 : a[1]-b[1] )
     let out = ""
     for (const dg of dropGrades) {
