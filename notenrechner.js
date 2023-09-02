@@ -54,7 +54,7 @@ function calculateGrades() {
     dropGrades.sort((a, b) => a[0].length === 0? 0 : a[1]-b[1] )
     let out = ""
     for (const dg of dropGrades) {
-        let line = `Gesamtnote ${Math.floor(dg[1] * 10) / 10} (${dg[1].toFixed(4)}) `
+        let line = `Gesamtnote ${(Math.floor(dg[1] * 10) / 10).toFixed(1)} (${dg[1].toFixed(4)}) `
         line += dg[0].length === 0 ? "ohne gestrichene Module" : `mit gestrichenen Modulen :`
         for (const m of dg[0]) line += ` ${m.name}`
         out += `${line}\n`
