@@ -1,11 +1,17 @@
 let curricula = []
 
 async function loadCurricula() {
-    const response = await fetch("/curricula.json")
+    const response = await fetch("curricula.json")
     curricula = await response.json()
 }
 
 // region UI
+function toggleDarkMode() {
+    let darkMode = !(document.documentElement.getAttribute("data-bs-theme") === "dark")
+    $("#lightSwitch").prop("class", darkMode ? "bi-sun-fill" : "bi-moon-fill")
+    document.documentElement.setAttribute("data-bs-theme", darkMode ? "dark" : "light")
+}
+
 function setCurriculaPickerTitle() {
     let currPicker = $("#curr-picker")
     let curriculum = curricula.filter((c) => c.id === currPicker.val())[0]
@@ -83,6 +89,7 @@ async function init() {
     updateModules()
     $("#curr-picker").on("change", () => updateModules())
     $("#btn-calc").on("click", calculateGrades)
+    $("#lightSwitch").on("click", toggleDarkMode)
 }
 
 $(init)
