@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Notenrechner.iml" filepath="$PROJECT_DIR$/../Notenrechner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GHPages.iml" filepath="$PROJECT_DIR$/GHPages.iml" />
     </modules>
   </component>
 </project>
