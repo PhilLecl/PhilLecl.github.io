@@ -6,13 +6,21 @@ async function loadCurricula() {
 }
 
 // region UI
+function setCurriculaPickerTitle() {
+    let currPicker = $("#curr-picker")
+    let curriculum = curricula.filter((c) => c.id === currPicker.val())[0]
+    currPicker.prop("title", `${curriculum.max_drop} Module bis ${curriculum.max_drop_cp} CP streichbar`)
+}
+
 function initCurriculaPicker() {
     curricula.forEach((currentElement, index, arr) => {
         $("#curr-picker").append(new Option(currentElement.name, currentElement.id))
     })
+    setCurriculaPickerTitle()
 }
 
 function updateModules() {
+    setCurriculaPickerTitle()
     let curriculum = curricula.filter((c) => c.id === $("#curr-picker").val())[0]
     $("#modules-container").children().remove()
     curriculum.modules.forEach((currentElement, index, arr) => {
