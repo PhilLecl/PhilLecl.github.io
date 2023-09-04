@@ -3,8 +3,8 @@
 Ein Rechner für die Gesamtnote und die optimale Kombination an gestrichenen Modulen
 für verschiedene Studiengänge der RWTH Aachen.
 
-Es wird die Gesamtnote für jede mögliche Kombination an gestrichenen Modulen berechnet.  
-Die Kombinationen, die die Gesamtnote verbessern, werden nach aufsteigender Gesamtnote sortiert angezeigt.
+Es wird die Gesamtnote für jede mögliche Kombination an gestrichenen Modulen berechnet
+und nach aufsteigender (=schlechter werdender) Gesamtnote sortiert angezeigt.
 
 ## Hinzufügen von neuen Studiengängen
 
