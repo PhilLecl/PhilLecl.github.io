@@ -1,4 +1,4 @@
-# [RWTH Notenrechner](https://phillecl.github.io/notenrechner.html)
+# [RWTH Notenrechner](https://phillecl.github.io/notenrechner/)
 
 Ein Rechner für die Gesamtnote und die optimale Kombination an gestrichenen Modulen
 für verschiedene Studiengänge der RWTH Aachen.
