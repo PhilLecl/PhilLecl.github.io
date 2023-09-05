@@ -62,8 +62,12 @@ function calculateDropGrade(curriculum, drop) {
     return sum_weighted_grades / sum_weighted_cp
 }
 
-function gradeOutput(grade) {
-    return `Gesamtnote ${(Math.floor(grade * 10) / 10).toFixed(1)} (${grade.toFixed(4)}) `
+function outputDropGrade(dropGrade) {
+    let gradeStr = `Gesamtnote ${(Math.floor(dropGrade[1] * 10) / 10).toFixed(1)} (${dropGrade[1].toFixed(4)})`
+    if (dropGrade[0].length === 0) return `${gradeStr} ohne gestrichene Module\n`
+    gradeStr += " mit gestrichenen Modulen:"
+    dropGrade[0].forEach((element, i, arr) => gradeStr += ` ${element.name}${(i + 1) < arr.length ? "," : "\n"}`)
+    return gradeStr
 }
 
 function calculateGrades() {
@@ -73,15 +77,10 @@ function calculateGrades() {
     for (drop of dropCombinations) {
         dropGrades.push([drop, calculateDropGrade(curriculum, drop)])
     }
-    // dropGrades = dropGrades.filter((dg) => dg[1] <= dropGrades[0][1]) // don't include combinations that worsen grade
-    dropGrades.sort((a, b) => a[0].length === 0 ? 0 : a[1] - b[1])
-    let out = `${gradeOutput(dropGrades[0][1])} ohne gestrichene Module\n\n`
+    let out = `${outputDropGrade(dropGrades[0])}\n`
     out += "Mögliche Kombinationen gestrichener Module (beste Kombinationen zuerst):\n"
-    for (let i = 1; i < dropGrades.length; i++) {
-        let dg = dropGrades[i]
-        out += `${gradeOutput(dg[1])} mit gestrichenen Modulen:`
-        for (let j = 0; j < dg[0].length; j++) out += ` ${dg[0][j].name}${(j + 1) < dg[0].length ? "," : "\n"}`
-    }
+    dropGrades = dropGrades.slice(1, dropGrades.length).sort((a, b) => a[1] - b[1])
+    dropGrades.forEach((element, i, arr) => out += outputDropGrade(element))
     $("#calc-out").val(out)
 }
 
