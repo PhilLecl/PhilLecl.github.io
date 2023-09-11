@@ -23,6 +23,8 @@ function initCurriculaPicker() {
         $("#curr-picker").append(new Option(currentElement.name, currentElement.id))
     })
     setCurriculaPickerTitle()
+    $("#curr-picker").on("change", () => updateModules())
+    updateModules()
 }
 
 function updateModules() {
@@ -33,6 +35,12 @@ function updateModules() {
         let title = `${currentElement.cp} CP, Faktor ${currentElement.weight}${currentElement.droppable ? "" : ", nicht streichbar"}`
         $("#modules-container").append($(`<div class="row"><div class="input-group"><span class="input-group-text col-9" title="${title}">${currentElement.name}</span><input type="number" id="grade-${currentElement.id}" class="form-control text-end module-grade col-3" min="1.0" max="4.0" step="0.1" value="4.0"></div></div>`))
     })
+    $(".module-grade").on("change", calculateGrades)
+    calculateGrades()
+}
+
+function setOutput(outStr) {
+    $("#calc-out").val(outStr)
 }
 
 // endregion
@@ -81,7 +89,7 @@ function calculateGrades() {
     out += "Mögliche Kombinationen gestrichener Module (beste Kombinationen zuerst):\n"
     dropGrades = dropGrades.slice(1, dropGrades.length).sort((a, b) => a[1] - b[1])
     dropGrades.forEach((element, i, arr) => out += outputDropGrade(element))
-    $("#calc-out").val(out)
+    setOutput(out)
 }
 
 // endregion
@@ -89,8 +97,6 @@ function calculateGrades() {
 async function init() {
     await loadCurricula()
     initCurriculaPicker()
-    updateModules()
-    $("#curr-picker").on("change", () => updateModules())
     $("#btn-calc").on("click", calculateGrades)
     $("#lightSwitch").on("click", toggleDarkMode)
 }
